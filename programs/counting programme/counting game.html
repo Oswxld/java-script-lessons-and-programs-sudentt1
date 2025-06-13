@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(131, 21, 131);
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        body {
+            background-color: rgb(255, 228, 225);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: rgb(133, 78, 133);
+        }
+        #number {
+            font-size: 2em;
+            color: pink;
+            background-color: palevioletred;
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+            width: 50px;
+            margin: auto;
+            border-radius: 50px;
+            border: 5px outset goldenrod
+
+        }
+
+        #buttons {
+            margin-top: 10px;
+            text-align: center;
+
+
+        }
+
+        #buttons button {
+            padding: 10px 20px;
+            margin: 2px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: pink;
+            color: rgb(133, 78, 133);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        #buttons button:hover {
+            background-color:palevioletred;
+            color: white;
+            transform: scale(1.1); 
+            
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Here is a counting game by muthoni</h1>
+    <p>Click the button to start counting!</p>
+
+    <p>decrese is for going back </p>
+    <p>increase is for going forward</p>
+    <p>reset is for going back to zero</p>
+
+    <p id="enjoy"> ENJOY</p>
+
+    <p>You can replace click with other events like mouseenter, mouseover, mouseleave, etc. For example:
+        mouseenter You enter the element (does not bubble to children).
+        mouseover You enter the element or any of its children (bubbles).
+    </p>
+
+
+    <div id="number">0</div>
+    <div id="buttons">
+        <button onclick="increase()">increase</button>
+        <button onclick="reset()">reset</button>
+        <button onclick="decrease()">decrease</button>
+    </div>
+
+    <script src="counting game.js">
+        
+    </script>
+</body>
+
+</html>

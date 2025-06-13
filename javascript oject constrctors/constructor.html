@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //a constructor is a way to create and initialize ojects easily ..it acts as the blue print for the constructor you want to initialize
+
+
+        // HOW TO CREATE A CONSTRUCTOR 
+        //SYNTAX
+
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+            this.greet = function(){
+                console.log(`hey ,my name is ${this.name}`)
+            }
+        }
+        
+        //here we will then add an object to use the bluprint
+
+        const oswald = new Person("Oswald",19);
+
+        //calling a method function
+        oswald.greet();// Hi, I'm Oswald 
+
+
+        //Adding a new property outside the constructor
+
+        oswald.city ="Nairobi"
+
+        // Add shared property using Prototype
+        Person.prototype.country = "Kenya";
+
+        //Using Prototype 
+        //if you add methods inside the constructor, each object gets its own copy (which wastes memory).
+
+        //SYNTAX
+        Person.prototype.sayHello = function(){
+            console.log(`Hello from ${this.name}`);
+        }
+
+        oswald.sayHello();
+
+        function Car(brand, model) {
+         this.brand = brand;
+        this.model = model;
+}
+
+            Car.prototype.honk = function() {
+             console.log(`${this.brand} ${this.model} says Beep beep!`);
+};
+
+            const myCar = new Car("Toyota", "Corolla");
+            myCar.honk(); // Toyota Corolla says Beep beep!
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

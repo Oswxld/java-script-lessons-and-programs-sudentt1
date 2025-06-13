@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*🧠 What is Destructuring in JavaScript?
+Destructuring is a way to unpack values from arrays or properties from objects into distinct variables.
+
+It makes code shorter, clearer, and more readable*/
+
+//📦 1. Array Destructuring
+
+const fruits = ['apple', 'banana', 'mango'];
+const [a, b, c] = fruits;
+
+console.log(a); // apple
+console.log(b); // banana
+console.log(c); // mango
+
+
+//✅ Skipping Items
+
+const [first, , third] = fruits;
+console.log(first); // apple
+console.log(third); // mango
+
+//✅ Default Values:
+
+//If the array doesn’t have a value at a position, and you provided a default value during destructuring — JavaScript will use your default instead of returning undefined
+
+
+const arr = ['A', 'B'];
+
+// Destructuring with default values
+const [x = 'X', y = 'Y', z = 'Z'] = arr;
+
+console.log(x); // 'A' → value exists
+console.log(y); // 'B' → value exists
+console.log(z); // 'Z' → value missing, so default used
+
+
+//🧱 2. Object Destructuring
+
+//IN OBJECT DESCTRUCTURING YOU USE {}..INSTEAD OF []
+
+const person = { 
+    name: 'Oswald',
+     age: 19 ,
+
+    };
+
+const { name, age } = person;
+console.log(name); // Oswald
+console.log(age);  // 19
+
+//storing the values in new variables
+const { name: fullName } = person;
+console.log(fullName); // Oswald
+
+
+
+//✅ Nested Object:
+const user = {
+  id: 1,
+  profile: {
+    username: 'oswald_great',
+    email: 'oswald@example.com'
+  }
+};
+
+const { profile: { username } } = user;
+console.log(username); // oswald_great
+
+//✅ Nested Array:
+
+const numbers = [1, [2, 3]];
+const [a, [b, c]] = numbers;
+console.log(b); // 2
+
+
+
+    </script>
+</body>
+</html>

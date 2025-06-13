@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //here we created two classes and connected one property to hold the data of the other class
+
+        //we used rest parameters to take in ddata and make it into arrays and then used spread parameters to spread the data and remove them
+        class Person1{
+            constructor (name,age,hobby,...freind){
+            this.name =name;
+            this.age =age;
+            this.hobby= hobby;
+            this.freinds= new Person2(...freind);
+
+
+            }
+
+        }
+
+        class Person2 {
+            constructor (name,age,hobby ){
+                this.name=name;
+                this.age=age;
+                this.hobby=hobby;
+            }
+        }
+
+        const Oswald=new Person1("Oswald",19,["music","coding","reading"],"Karanu",20,["music","football","pess"])
+
+        console.log(Oswald.hobby);
+        console.log(Oswald.freinds.hobby);
+    </script>
+</body>
+</html>

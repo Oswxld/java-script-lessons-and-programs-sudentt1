@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* .map.() = accepts a callback and applies that fuction to each element of an array ..then returns a new array
+
+        */
+       const students = ["Oswald","patrick","Kimani"];
+
+       const studentsUppercase = students.map(uppercase);
+       //new variale to old the returned output
+
+       function uppercase(element,index,array){
+        return array[index]=element.toUpperCase();
+       }
+       console.log(studentsUppercase)
+
+        
+    </script>
+</body>
+</html>

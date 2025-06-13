@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //javascript object is a collection of key value pairs
+        //it is used to store data and respresent things in the real wold
+        //ojects can hold values of any type ..strings numbers ..oolean ..arrays functions or even other ojects
+
+        // syntax
+
+        const person ={
+            name:"Oswald",
+            Age:19,
+            isStudent: true,
+        }
+
+        //Accesing object properties 
+        
+        //1.Dot Notation 
+        console.log(person.name);//output Oswald
+
+        //2.Bracket Notation
+        console.log(person["Age"]); // 19
+
+        //Updating Properties 
+        person.city ="Nairobi";
+        person.Age =20;
+
+        console.log(person.Age);//it will now output the new age 
+
+        //OBJECTS WITH METHODS
+        const person1 ={
+            name:"KIMANI",
+            greet:function(){
+                console.log(`Hello my name is ${this.name}`);
+            }
+        }
+
+        person1.greet();
+
+
+    </script>
+</body>
+</html>

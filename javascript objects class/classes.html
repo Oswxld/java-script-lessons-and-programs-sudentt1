@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+        // ✅ 1. Basic Class Definition
+class Vehicle {
+  // The constructor method runs when a new object is created from this class
+  constructor() {
+    this.wheels = 4; // Default number of wheels for a vehicle
+  }
+
+  // A method that all Vehicle instances can use
+  describe() {
+    console.log(`This vehicle has ${this.wheels} wheels.`);
+  }
+}
+
+// ✅ 2. Creating an object from the class
+const myVehicle = new Vehicle();
+myVehicle.describe(); // Output: This vehicle has 4 wheels
+
+
+
+
+
+// ✅ 3. Class with a constructor that takes parameters
+class Animal {
+  constructor(name) {
+    this.name = name; // The name is set when the object is created
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+const cat = new Animal("Whiskers");
+cat.speak(); // Output: Whiskers makes a sound.
+
+
+
+// ✅ 4. Inheritance using 'extends'
+class Car extends Vehicle {
+  constructor(brand) {
+    super(); // Calls the parent (Vehicle) constructor to set wheels = 4
+    this.brand = brand; // Child class adds new property
+  }
+
+  info() {
+    console.log(`${this.brand} car has ${this.wheels} wheels.`);
+  }
+}
+
+const myCar = new Car("Toyota");
+myCar.describe(); // Output: This vehicle has 4 wheels
+myCar.info();     // Output: Toyota car has 4 wheels
+
+
+
+// ✅ 5. Passing external values into classes (advanced understanding)
+const externalWheels = 6;
+
+class Truck extends Vehicle {
+  constructor(wheels) {
+    super(); // You could also do: super(wheels) if Vehicle accepted parameters
+    this.wheels = wheels; // Overriding parent property with new value
+  }
+
+  load() {
+    console.log(`This truck with ${this.wheels} wheels is ready to load.`);
+  }
+}
+
+const toyotaTruck = new Truck(externalWheels);
+toyotaTruck.describe(); // Output: This vehicle has 6 wheels
+toyotaTruck.load();     // Output: This truck with 6 wheels is ready to load
+
+
+
+
+// ✅ 6. Summary of Key Points (in comments)
+
+/*
+1. Classes are templates for creating objects.
+2. The constructor() is used to initialize object properties.
+3. Use 'this' to refer to the current object’s properties.
+4. Use 'extends' to create a subclass (child) that inherits from a parent class.
+5. 'super()' must be called in the child constructor to access the parent's constructor.
+6. Child classes can add their own properties and methods.
+7. Data must be passed manually unless the parent sets defaults internally.
+*/
+
+
+
+
+class Device {
+  constructor() {
+    this.power = true;
+  }
+
+  status() {
+    console.log(`Device is ${this.power ? "on" : "off"}`);
+  }
+}
+
+class Laptop extends Device {
+  constructor() {
+    super(); // Inherits power property
+    this.brand = "HP";
+  }
+
+  details() {
+    console.log(`${this.brand} laptop is powered: ${this.power}`);
+  }
+}
+
+const myLaptop = new Laptop();
+myLaptop.status();  // Output: Device is on
+myLaptop.details(); // Output: HP laptop is powered: true
+
+    </script>
+</body>
+</html>

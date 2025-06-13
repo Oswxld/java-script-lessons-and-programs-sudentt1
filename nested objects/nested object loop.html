@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const person ={
+            Fullname:"Oswald Gikandi",
+            age:19,
+            isStudent:true,
+            hobbies:["coding","listening to soul music","reading"],
+            address: {
+                street:"124 Conch St",
+                city:"Bikini Bottom",
+                country:"nairobi",
+            }
+
+        }
+
+        for(const property in person.adress){
+            console.log(person.address[property]);
+        }
+    </script>
+    
+</body>
+</html>

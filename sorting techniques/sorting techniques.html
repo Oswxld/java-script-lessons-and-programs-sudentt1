@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //Sorting techniques in JavaScript allow you to arrange data (usually arrays) in a particular order — either ascending or descending. 
+
+        //1. Using the .sort() Method (Built-in)
+
+        array.sort([compareFunction])
+
+        let fruits = ['banana', 'apple', 'cherry'];
+        fruits.sort(); // ['apple', 'banana', 'cherry']
+
+        //but with numers this wont work because this is only for strings
+
+        let numbers = [100, 5, 25];
+        numbers.sort(); // [100, 25, 5] ❌ (treats them as strings)
+
+
+        //✅ Custom Compare Function
+
+        //✅ Example: Sorting an Array of Numbers
+
+        let numbers1 = [42, 7, 13, 100, 5];
+        
+        //👉 1. Sort in Ascending Order (small to big)
+
+        numbers.sort((a, b) => a - b);
+        console.log(numbers); // [5, 7, 13, 42, 100]
+
+        /*🔍 What’s happening inside (a, b) => a - b?
+This function tells JavaScript how to compare two elements (a and b):
+
+If the result is negative, a comes before b
+
+If the result is positive, b comes before a
+
+If it's zero, they stay in place (equal)
+
+💡 Example comparisons:
+Compare 42 and 7 → 42 - 7 = 35 → positive, so 7 goes before 42
+
+Compare 7 and 13 → 7 - 13 = -6 → negative, so 7 stays before 13**/
+
+
+            
+    //👉 2. Sort in Descending Order (big to small)
+
+    numbers = [42, 7, 13, 100, 5]; // Reset the array
+    numbers.sort((a, b) => b - a);
+    console.log(numbers); // [100, 42, 13, 7, 5]
+
+    /*(a, b) => b - a just flips the order:
+If b - a is positive, b goes before a, which means larger numbers come first
+
+💡 Example comparisons:
+Compare 42 and 7 → 7 - 42 = -35 → negative, so 42 stays before 7
+
+Compare 13 and 100 → 100 - 13 = 87 → positive, so 100 goes before 13*/
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

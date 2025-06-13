@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: palevioletred;
+            color: whitesmoke;
+            text-shadow: 5px 5px 10px rgb(27, 26, 26);
+            text-align: center;
+
+
+        }
+        button, input {
+            border-radius: 30px;
+            padding: 10px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 5px 5px 10px ;
+            margin: 10px;
+            
+        }
+        #button{
+            border: 5px outset palevioletred;
+        }
+
+        #button:hover, input:hover {
+            background-color: rgb(255, 255, 255);
+            color: palevioletred;
+            box-shadow: 10px 10px 5px rgb(27, 26, 26);
+            transform: scale(1.1);
+        }
+        #button:active{
+            background-color: palevioletred;
+            color: whitesmoke;
+            box-shadow: 5px 5px 10px rgb(27, 26, 26);
+            transform: scale(0.9);
+            
+            
+        }
+        .dice-image {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            transition: transform 0.3s ease;
+            border-radius: 25px;
+            border: 3px solid #333;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>THE MULTI DICE ROLLER</h1>
+    <h2>Ever wanted to roll a dice with your freinds all at the same time??..WELL NOW YOU CAN.USING THE OSWALD MUTLI DICE PROGRAM LOL😂😂😂</h2>
+    <h3>(this idea came by after i showed kimani my other dice roller akasema "BORA UKO HAPPY".so i said maybe i should improve it)</h3>
+    <h4>?😂😂😂lets see what he says to this..</h4>
+
+    <input id="diceinput" type="number" placeholder="Enter the number of dices to roll">
+    <button id="button" onclick="diceroller()">click to roll the dices</button>
+    <p id="diceresults"></p>
+    <div id="diceimages"></div>
+    <script >
+        function diceroller(){
+let diceinput = document.getElementById("diceinput").value;
+let dicepicture = document.getElementById("diceimages");
+let diceresults = document.getElementById("diceresults");
+let dicerollresults = [];
+let diceimagesresults = [];
+let diceinputs = Number(diceinput);
+
+for (let i = 0; i < diceinputs; i++) {
+    let diceroll = Math.floor(Math.random()*6)+1;
+    dicerollresults.push(diceroll);
+    diceimagesresults.push(`<img src="dice${diceroll}.jpg" alt="Dice ${diceroll}" class="dice-image">`);
+
+}
+diceresults.textContent = `You rolled: ${dicerollresults.join(", ")}`;
+dicepicture.innerHTML = diceimagesresults.join(" ");
+}
+    </script>
+</body>
+</html>

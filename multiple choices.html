@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiple Select with Limit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    select {
+      width: 300px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select up to 3 options:</h2>
+  <select id="mySelect" multiple>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+    <option value="option4">Option 4</option>
+    <option value="option5">Option 5</option>
+  </select>
+
+  <p id="message" style="color: red;"></p>
+
+  <script>
+    const select = document.getElementById('mySelect');
+    const maxSelections = 3;
+    const message = document.getElementById('message');
+
+    select.addEventListener('change', () => {
+      const selectedOptions = Array.from(select.selectedOptions);
+      if (selectedOptions.length > maxSelections) {
+        // Deselect the last selected option
+        selectedOptions[selectedOptions.length - 1].selected = false;
+        message.textContent = `You can only select up to ${maxSelections} options.`;
+      } else {
+        message.textContent = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

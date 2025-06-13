@@ -1,0 +1,17 @@
+<h1>OSWALD'S COLOR GRADIENT TESTER</h1>
+        <label>color1:<input id="color1" type="color" value="#667eea"></label>
+        <label>color2<input id="color2" type="color" value="#764ba2"></label>
+        <label>direction::<select id="direction">
+                <option>to top</option>
+                <option>to top</option>
+                <option>to left </option>
+                <option>to left </option>
+                <option>to left </option>
+                <option>to top right</option>
+                <option>to bottom left </option>
+                <option>to bottom right </option>
+                <option>72deg</option>
+                <option>200deg</option>
+            </select></label>
+
+            <div id="csscode">linear-gradient(135deg, #667eea, #764ba2)</div>

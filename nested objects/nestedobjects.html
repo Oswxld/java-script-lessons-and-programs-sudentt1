@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //💎 What Are Nested Objects?
+//Nested objects are just objects inside other objects.
+//This allows you to structure complex data more clearly.
+
+//📦 Example:
+
+//elow we have two nested objects .."contanct" and "location"
+const user = {
+  name: "Oswald",
+  age: 19,
+  contact: {
+    email: "oswald@king.com",
+    phone: "0712345678"
+  },
+  location: {
+    city: "Nairobi",
+    country: "Kenya",
+    coordinates: {
+      lat: -1.2921,
+      long: 36.8219
+    }
+  }
+};
+
+//🎯 Accessing Nested Values
+
+console.log(user.contact.email);         // "oswald@king.com"
+console.log(user.location.coordinates.lat);  // -1.2921
+
+//🧠 Destructuring Nested Objects
+
+//💥 Basic destructuring:
+const { name, contact } = user;
+console.log(name);       // Oswald
+console.log(contact);    // { email, phone }
+
+//💥 Deep destructuring
+const {
+  contact: { 
+    email, 
+    phone 
+},
+
+  location: {
+    coordinates: { lat,
+         long 
+        }
+  }
+} = user;
+
+console.log(email);  // oswald@king.com
+console.log(lat);    // -1.2921
+
+
+//🛠 Modifying Nested Properties
+
+user.contact.email = "kingoswald@alpha.com";
+console.log(user.contact.email); // ✅ updated
+
+user.location.coordinates.lat = 0;
+
+    </script>
+</body>
+</html>

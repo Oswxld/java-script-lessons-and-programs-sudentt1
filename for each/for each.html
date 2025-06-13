@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers =[1,2,3,4,5];
+        
+        numbers.forEach(triple);
+        numbers.forEach(display)
+        
+        function double(element){
+            let result = element *2;
+            console.log(`${result}`);
+        }
+
+        function display(element){
+            console.log(element);
+        }
+
+        function triple(element, index, array){
+            array[index]= element *3;
+        }
+        //...up here we were working with numbers and doubled and tripled  them using for each
+        let fruits =["aplle","orange","banana","orange"];
+
+        fruits.forEach(uppercase)
+        fruits.forEach(displayfruits);
+        function displayfruits(element){
+            console.log(element);
+        }
+
+        function uppercase(element, index, array){
+            array[index] = element.toUpperCase()
+        }
+        //here ... we capitalised the elements
+
+
+        let fruits2 =["PASSION","PINEAPPLE","MANGO","MIXEDFUITS"];
+
+        fruits2.forEach(uppercase2)
+        fruits2.forEach(displayfruits2);
+
+        function displayfruits2(element){
+            console.log(element);
+        }
+
+        function uppercase2(element, index, array){
+            array[index] = element.toLowerCase();
+        }
+        // here.....we turned the elements into lowercase  
+        let fruits3 =["aplle","orange","banana","orange"];
+
+        fruits3.forEach(Uppercaseletter1)
+        fruits3.forEach(displayfruits2);
+
+         function displayfruits2(element){
+            console.log(element);
+        }
+
+
+        function Uppercaseletter1(element, index, array){
+            array[index]= element.charAt(0).toUpperCase() + element.slice(1);
+        }
+
+        //here we capitalised the first element and the used string concatination to join it with the rest of the string
+
+
+
+
+
+        /*🫶
+
+🌿 In JavaScript’s forEach() (and other array methods like map, filter, etc.), the order of parameters MUST match the function’s internal structure.
+The official parameter order for forEach() is:
+
+javascript
+Copy
+Edit
+         array.forEach(function(element, index, array) { ... });
+*/
+    </script>
+</body>
+</html>
+// JavaScript's forEach() is a method that allows you to iterate over arrays
+// It calls a function ONCE for each element in the array (in order)
+// Syntax: array.forEach(callback(element, index, array))
+
+const fruits = ['🍎', '🍌', '🍇', '🍓'];
+
+// Example 1: Basic forEach
+fruits.forEach(function(fruit, index) {
+    // The callback function receives:
+    // 1. fruit - the current element
+    // 2. index - the index of the current element
+    // 3. array - the whole array (not used here, but available)
+    console.log(`Fruit at index ${index} is ${fruit}`);
+});
+
+// Example 2: Using arrow functions (shorter syntax)
+fruits.forEach((fruit, index) => {
+    console.log(`[Arrow] Index: ${index}, Fruit: ${fruit}`);
+});
+
+// Example 3: Perform an action with forEach
+const numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+numbers.forEach(num => {
+    sum += num; // Accumulate the sum
+});
+console.log(`Sum of numbers: ${sum}`); // Sum: 15
+
+// Example 4: forEach does NOT return a new array (unlike map or filter)
+const result = numbers.forEach(num => num * 2);
+console.log(`Result: ${result}`); // undefined
+
+// Example 5: You CANNOT break out of forEach with break or return (use for-loop or some if needed)
+numbers.forEach(num => {
+    if (num === 3) {
+        // This return only exits the current callback, not the whole loop
+        console.log(`Found ${num}, but cannot break forEach`);
+        return;
+    }
+    console.log(`Processing ${num}`);
+});
+
+// Example 6: forEach on objects using Object.keys
+const person = { name: 'Oswald', age: 19, goal: 'Master JavaScript' };
+Object.keys(person).forEach(key => {
+    console.log(`${key}: ${person[key]}`);
+});
+
+// Summary in comments:
+// - forEach is great for performing an action on every array element.
+// - Cannot break/return early. Use for-loops for that.
+// - It does NOT create a new array (unlike map, filter, reduce).
+// - Can pass element, index, and array to the callback.

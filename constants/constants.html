@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="constants.css">
+    <title>Document</title>
+    <style>
+        #circle {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(139, 91, 91);
+            border-radius: 50%;
+            border: 5px outset rgb(56, 7, 54);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: violet;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+            font-weight: bold;
+        
+
+            
+        }
+        #radius{
+            border: 5px inset goldenrod;
+            border-radius: 40px;
+        }
+        button{
+            color: blue;
+            background-color: yellow;
+            border-radius: 40px;
+            border: 5px outset rgb(56, 7, 54);
+            box-shadow: 5px 10px 5px grey;
+        }
+        </style>
+</head>
+<body>
+    <h1>here is a circle </h1>
+    <div id="circle" > what is the radius brodie?
+    </div>
+    <br>
+    <p id="area"></p>
+    <pre>   
+        <label style="font-size: large;color: rgb(141, 104, 10);" for="radius">enter the radius you want to calculate:</label>
+        
+        <input type="number" id="radius" min="0" max="500" value="125"></pre>
+
+    <button onclick="updateCircle()">Calculate Area</button>
+
+
+
+    
+    <script src="constants.js">
+        
+    </script>
+</body>
+</html>

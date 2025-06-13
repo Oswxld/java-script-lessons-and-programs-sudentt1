@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // The `super` keyword is used in JavaScript classes to refer to the parent class.
+// It is mainly used in two ways:
+// 1. To call the parent class constructor
+// 2. To call a method from the parent class
+
+// Let's break it down with an example:
+
+// Parent class
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Child class that extends Animal
+class Dog extends Animal {
+  constructor(name, breed) {
+    // `super(name)` calls the constructor of the parent class (Animal)
+    super(name);
+    this.breed = breed;
+  }
+
+  speak() {
+    // `super.speak()` calls the `speak()` method from the parent class
+    super.speak(); // Calls Animal's speak()
+    console.log(`${this.name} barks.`); // Adds its own behavior
+  }
+}
+
+// Creating an instance of Dog
+const myDog = new Dog("Max", "Labrador");
+
+// Testing the speak method
+myDog.speak();
+
+/*
+Expected Output:
+Max makes a sound.
+Max barks.
+*/
+
+// Summary:
+// - `super()` is used in the constructor to call the parent class's constructor.
+// - `super.methodName()` is used to call methods from the parent class.
+
+    </script>
+</body>
+</html>

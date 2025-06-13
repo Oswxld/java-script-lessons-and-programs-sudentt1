@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: pink;
+            ;
+        }
+        h1{
+            color: palevioletred;
+            text-shadow: 5px 5px 10px palevioletred;
+
+
+        }
+        #buttonclick{
+            color: rgb(141, 12, 91);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #dice{
+            font-size: 50px;
+            color: rgb(97, 43, 43);
+        }
+        #button{
+            background-color: rgb(241, 34, 148);
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px rgb(241, 34, 148);
+            transition: all 2.0s ease-in-out;
+        }
+        #button:hover{
+            background-color: rgb(131, 33, 211);
+            color: black;
+            box-shadow: 5px 5px 10px rgb(86, 7, 117);
+            transform: rotate(720deg)
+            
+        }
+        #dicephoto{
+            transition: all 1.0s ease-in-out;
+        }
+        #dicephoto:hover{
+            transform: rotate(360deg);
+            
+            box-shadow: 5px 5px 10px rgb(241, 34, 148);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Dice Roller</h1>
+    <p id="buttonclick">Click the button to roll a dice:</p>
+    <p1 id="dice">🎲</p>
+        <p2 id="dicerolled"></p2>
+        <img id="dicephoto" src="photos/default.jpg" alt="Dice Image" width="100px" length="100px" style="border-radius: 25px;border: 5px outset palevioletred;">
+    
+
+    <button id="button" onclick="rollDice()">Roll Dice</button>
+    
+
+    
+    <script src="dice.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //🧱 What Is an Array of Objects?
+
+        //It’s simply an array, where each item inside is an object.
+
+        const users = [
+  { name: "Oswald", age: 19 },
+  { name: "Alex", age: 22 },
+  { name: "Zoe", age: 18 }];
+
+/*✅ Why Use It?
+Because real-world data is usually structured like this:
+
+A list of users
+
+A list of products
+
+A list of countries Oswald has visited 🌍*/
+
+
+
+//🛠️ Accessing Data
+
+//1. Access a specific object:
+
+console.log(users[0]); 
+// { name: "Oswald", age: 19 }
+
+
+//2. Access a specific property:
+
+console.log(users[0].name); 
+// "Oswald"
+
+//🔁 Looping Through Array of Objects
+
+for (let user of users) {
+  console.log(`${user.name} is ${user.age} years old`);
+}
+
+
+users.forEach(user => {
+  console.log(user.name.toUpperCase());
+});
+
+//🔍 Searching
+
+const found = users.find(user => user.name === "Zoe");
+console.log(found); 
+// { name: "Zoe", age: 18 }
+
+//Filter users by condition
+const adults = users.filter(user => user.age >= 20);
+console.log(adults);
+// [{ name: "Alex", age: 22 }]
+
+
+//🔧 Modifying Values
+
+users[1].age = 23;
+
+
+//you can even add a new property
+users[0].country = "Kenya";
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(189, 13, 72);
+            color: whitesmoke;
+        }
+        #studentsname, #gradeInput {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border: 3px outset palevioletred;
+        }
+        #submitButton {
+            padding: 10px 20px;
+            background-color: rgb(241, 34, 148);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 3px 3px 5px rgb(14, 2, 8);
+            transition: all 1.0s ease-in-out;
+        }
+        #submitButton:hover {
+            background-color: rgb(131, 33, 211);
+            color: black;
+            box-shadow: 5px 5px 5px rgb(86, 7, 117);
+            transform: rotate(720deg);
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>STUDENT DATA BASE INPUT</h1>
+    
+    <label for="studentsname"> students name : </label><input type="text" id="studentsname" placeholder="Enter the student's name">
+    <br>
+    <br>
+    <label for="gradeInput"> students grade :</label>
+    <input type="text" id="gradeInput" placeholder="Enter the students grade">
+    <br>
+    <button id="submitButton" onclick="studentstoredinfo()">Submit</button>
+
+    <p id="nameofstudent"></p>
+    <p id="gradeofstudent"></p>
+
+    <P id="actualgrade"></P>
+
+    <script src="nextclass.js"></script>
+</body>
+</html>   

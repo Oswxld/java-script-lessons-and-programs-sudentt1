@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  min-height: 100vh;
+}
+.container {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 20px;
+  border-radius:24px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  display: inline-block;
+}
+label {
+    display: inline-block;
+  margin: 0px 0px;
+}
+input[type="color"] {
+  padding: 5px;
+  width: 60px;
+}
+#cssOutput{
+    background: rgba(0, 0, 0, 0.2);
+    max-width: 315px;
+    margin: auto;
+}
+button{
+    border-radius:25px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    background-color: #cbc2d4;
+}
+</style>
+
+
+    
+
+
+<body>
+    
+    <div class="container">
+        <h3>🦇B@ckgr0und 1in3@r t3st3r f0r my Css🦇</h3>
+        <label for="color1">color1:</label>
+        <input id="color1" type="color" value="#667eea">
+
+        <label for="color2">color2</label>
+        <input id="color2" type="color" value="#764ba2">
+
+        <label for="direction" value="to right">direction::</label>
+        <select id="direction">
+                <option value="to top">to top</option>
+                <option value="to bottom">to bottom</option>
+                <option value="to left">to left </option>
+                <option value="to right">to right </option>
+                <option value="to  top left">to  top left </option>
+                <option value="to top right">to top right</option>
+                <option value="to bottom left">to bottom left </option>
+                <option value="to bottom right">to bottom right </option>
+                <option value="72deg">72deg</option>
+                <option value="200deg">200deg</option>
+            </select>
+
+    </div>
+    <div class="output" id="cssOutput">linear-gradient(135deg, #667eea, #764ba2)</div>
+   <br>
+   
+
+    <script>
+        const color1 = document.getElementById("color1");
+        const color2 = document.getElementById("color2");
+        const direction = document.getElementById("direction");
+
+        function updateBackground(){
+            document.body.style.background = `linear-gradient(${direction.value}, ${color1.value}, ${color2.value})`;
+            document.getElementById("cssOutput").textContent =  `linear-gradient(${direction.value}, ${color1.value}, ${color2.value})`;
+        }
+
+        color1.addEventListener("input", updateBackground);
+        color2.addEventListener("input", updateBackground);
+        direction.addEventListener("input", updateBackground);
+        
+        updateBackground();
+    </script>
+
+</body>
+
+</html>
